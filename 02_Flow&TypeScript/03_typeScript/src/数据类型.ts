@@ -34,3 +34,5 @@ let someLen:number =(<string>someVal).length;
 // 断言2
 let someLe2:number =(someVal as string).length;
 
+
+
