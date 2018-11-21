@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>asdfadf{{msg}}</p>
+        <p>{{msg}}asdfasdf
+
+            <span>{{msg}}</span>
+        </p>
+        <p>{{obj.name}}</p>
+        <p v-text="msg"></p>
+        <p v-html="msg"></p>
+        <input type="text" v-modal="msg">
+        <button v-on:click="clickFn">点击</button>
+    </div>
+</body>
+<script src="./src/compile.js"></script>
+<script src="./src/vue.js"></script>
+<script>
+    var el = new Vue({
+        el: '#app',
+        data: {
+            msg: "hello vue",
+            obj: {
+                name: "hhh"
+            }
+        },
+        methods: {
+            clickFn() {
+                console.log(this)
+            }
+        }
+    })
+</script>
+
+</html>
