@@ -6,6 +6,7 @@ class Compile {
         if (this.el) {
             let fragment = this.node2fragment(this.el)
             this.compile(fragment)
+            new Observer(this.vm.$data);
             document.body.appendChild(fragment)
         }
     }

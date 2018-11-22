@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    //关于正则的分组
+    // 分组有四种类型
+
+    // 捕获型 ()
+    // 非捕获型 (?:)
+    // 正向前瞻型 (?=)
+    // 反向前瞻型 (?!)
+    // 我们使用的比较多的都是捕获型分组，只有这种分组才会暂存匹配到的串
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var reg = /(\d{4})-(\d{2})-\d{2}/;
+    var dateStr = '2018-04-18';
+    reg.test(dateStr); //true
+    console.log(reg.test(dateStr), 222)
+
+
+
+
+    console.log(RegExp.$1) //2018
+    console.log(RegExp.$2) //04
+    console.log(RegExp.$3) //18
+
+
+
+
+
+
+
+    var str = "https://clientest.huanyueguoji.com/myAccount.html#/BorrowApply/BorrowDetail?id=1165";
+    var strReg = /(.+)\?{1}(.+)/;
+
+    strReg.test(str)
+    console.log(RegExp.$1)
+    console.log(RegExp.$2)
+
+
+
+
+
+
+
+
+    var str = "adfasd324232sdfas";
+    console.log(str);
+    var reg = new RegExp("([a-z]*)(\\d*)([a-z]*)");
+    var arr = str.match(reg);
+    console.log(arr[0] + "===" + arr[1] + "===" + arr[2] + "===" + arr[3]);
+    console.log(RegExp.$1 + "-----" + RegExp.$2 + "----" + RegExp.$3);
+</script>
+
+</html>

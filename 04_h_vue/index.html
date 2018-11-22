@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p v-text="msg"></p>
+        <p v-html="msgH">
+            <p>{{msg}}</p>
+        </p>
+        <p>{{msg}}</p>
+        <p>{{obj.name}}</p>
+
+        <input type="text" v-model="msg">
+        <button v-on:click="fn">按钮</button>
+    </div>
+
+
+    <script src="./src/vue.js"></script>
+
+    <script>
+        var vm = new Vue({
+                el: '#app', //dom,
+                data: {
+                    msg: 'myvue',
+                    msgH: "<h1>my</h1>",
+                    obj: {
+                        name: '黄天赐大傻子'
+                    }
+                },
+                methods: {
+                    fn() {
+                        console.log(this.$data.msg)
+                        console.log(12)
+                    }
+                },
+            })
+            // console.log(vm)
+    </script>
+</body>
+
+</html>
