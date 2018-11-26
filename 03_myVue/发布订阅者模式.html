@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发布订阅者模式</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var dep = {
+        events: {},
+        subscribe(type, fn) {
+            // 消息类型不存在
+            if (typeof this.events[type] === 'undefined') {
+                this.events[type] = [fn]
+                    // 存在，将fn推入事件队列
+            } else {
+                this.events[type].push(fn)
+            }
+        },
+
+        publish(type, args = {}) {
+            // 消息类型没人订阅
+            if (!this.events[type]) return
+
+            let i = 0
+            let len = this.events[type].length
+            for (; i < len; i++) {
+                // 依次执行事件队列（发布）
+                this.events[type][i].call(this, {
+                    type,
+                    args
+                })
+            }
+        }
+    }
+
+    dep.subscribe('time', function(e) {
+        console.log(`事件: ${e.type}`)
+        console.log(`消息: ${e.args.message}`)
+    })
+
+    dep.subscribe('js', function(e) {
+        console.log(`事件: ${e.type}`)
+        console.log(`消息: ${e.args.message}`)
+    })
+
+    dep.publish('time', {
+        message: '我订阅了time'
+    })
+</script>
+
+</html>

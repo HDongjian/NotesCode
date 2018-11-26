@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发布订阅者2</title>
+</head>
+
+<body>
+
+
+    <script>
+        var dep = {
+            events: [],
+            subscribe(fn) {
+                this.events.push(fn);
+            },
+            publish() {
+                this.events.forEach(cb => {
+                    cb();
+                });
+            }
+        }
+        dep.subscribe(function() {
+            console.log(1)
+        })
+        dep.subscribe(function() {
+            console.log(2)
+        })
+        dep.publish();
+    </script>
+</body>
+
+</html>

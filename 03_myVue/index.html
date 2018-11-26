@@ -19,10 +19,11 @@
         <p>{{obj.name}}</p>
         <p v-text="msg"></p>
         <p v-html="msg"></p>
-        <input type="text" v-modal="msg">
+        <input type="text" v-modal="obj.name">
         <button v-on:click="clickFn">点击</button>
     </div>
 </body>
+<script src="./src/watcher.js"></script>
 <script src="./src/observer.js"></script>
 <script src="./src/compile.js"></script>
 <script src="./src/vue.js"></script>
@@ -38,6 +39,7 @@
         methods: {
             clickFn() {
                 console.log(this)
+                this.obj.name = '1213'
             }
         }
     })

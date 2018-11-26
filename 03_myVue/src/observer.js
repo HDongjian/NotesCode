@@ -14,19 +14,20 @@ class Observer {
     }
     defineReactive(obj, key, value) {
         const self = this;
+        let dep = new Dep();
         Object.defineProperty(obj, key, {
             configurable: true,
             enumerable: true,
             get() {
-                console.log('获取了', value)
+                Dep.target && dep.addSub(Dep.target)
                 return value;
             },
             set(newvalue) {
                 if (newvalue === value) {
                     return
                 }
-                console.log('设置了', newvalue)
                 value = newvalue;
+                dep.notify();
                 self.walk(value)
             }
         })
