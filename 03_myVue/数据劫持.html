@@ -11,28 +11,65 @@
 <body>
 
 </body>
+
+<!-- var obj = -->
+<!-- Object.defineProperty -->
+
 <script>
     var obj = {
-        name: 12,
-        age: 12,
-        abc: 1212,
+        name: "张三",
+        age: 12
     }
-    var obj2 = {};
-
     var temp = obj.name;
-    Object.defineProperty(obj2, 'name', {
-        configurable: false,
-        enumerable: true,
+    Object.defineProperty(obj, 'name', {
+        configurable: true,
+        enumerable: false,
         get() {
-            // console.log(obj)
-            return temp;
+            console.log('get了')
+                // return temp
         },
-        set(newValue) {
-            console.log(newValue)
-            temp = newValue
-            console.log(obj)
-        }
+        set() {
+            console.log('set了')
+        },
     })
+    for (const key in obj) {
+        console.log(key)
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // var obj = {
+    //     name: 12,
+    //     age: 12,
+    //     abc: 1212,
+    // }
+    // var obj2 = {};
+
+    // var temp = obj.name;
+    // Object.defineProperty(obj2, 'name', {
+    //     configurable: false,
+    //     enumerable: true,
+    //     get() {
+    //         // console.log(obj)
+    //         return temp;
+    //     },
+    //     set(newValue) {
+    //         console.log(newValue)
+    //         temp = newValue
+    //         console.log(obj)
+    //     }
+    // })
 
     // for (const key in obj) {
     //     obj[key] = 'abc'

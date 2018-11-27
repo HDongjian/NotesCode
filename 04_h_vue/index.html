@@ -12,17 +12,18 @@
 
     <div id="app">
         <p v-text="msg"></p>
-        <p v-html="msgH">
-            <p>{{msg}}</p>
+        <p v-html="msg">
+            <!-- <p>{{msg}}</p> -->
         </p>
         <p>{{msg}}</p>
-        <p>{{obj.name}}</p>
+        <!-- <p>{{obj.name}}</p> -->
 
         <input type="text" v-model="msg">
         <button v-on:click="fn">按钮</button>
     </div>
-
-
+    <script src="./src/watcher.js"></script>
+    <script src="./src/observer.js"></script>
+    <script src="./src/compile.js"></script>
     <script src="./src/vue.js"></script>
 
     <script>

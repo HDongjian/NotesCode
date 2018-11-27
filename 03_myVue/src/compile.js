@@ -167,7 +167,7 @@ let CompileUtil = {
                 } else {
                     data = data[v];
                 }
-                console.log(data);
+                // console.log(data);
             })
         })
     },

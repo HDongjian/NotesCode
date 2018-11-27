@@ -10,25 +10,74 @@
 
 <body>
 
-
     <script>
         var dep = {
             events: [],
-            subscribe(fn) {
+            sub(fn) {
                 this.events.push(fn);
             },
-            publish() {
+            pub() {
                 this.events.forEach(cb => {
                     cb();
-                });
+                })
             }
         }
-        dep.subscribe(function() {
+
+
+        dep.sub(() => {
             console.log(1)
         })
-        dep.subscribe(function() {
+        dep.sub(() => {
             console.log(2)
         })
+        dep.sub(() => {
+            console.log(3)
+        })
+
+        dep.pub();
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var dep = {
+                events: [],
+                subscribe(fn) {
+                    this.events.push(fn);
+                },
+                publish() {
+                    this.events.forEach(cb => {
+                        cb();
+                    });
+                }
+            }
+            // dep.subscribe(function() {
+            //     console.log(1)
+            // })
+            // dep.subscribe(function() {
+            //     console.log(2)
+            // })
         dep.publish();
     </script>
 </body>
