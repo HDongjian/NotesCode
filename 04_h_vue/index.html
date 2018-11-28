@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>h_vue</title>
 </head>
 
 <body>
 
     <div id="app">
-        <p v-text="msg"></p>
-        <p v-html="msg">
-            <!-- <p>{{msg}}</p> -->
+        <p v-text="obj.name"></p>
+        <p v-html="obj.name">
+            <!-- <p>{{obj.name}}</p> -->
         </p>
-        <p>{{msg}}</p>
+        <p>{{obj.name}}</p>
         <!-- <p>{{obj.name}}</p> -->
 
-        <input type="text" v-model="msg">
+        <input type="text" v-model="obj.name">
         <button v-on:click="fn">按钮</button>
     </div>
     <script src="./src/watcher.js"></script>
@@ -28,22 +28,23 @@
 
     <script>
         var vm = new Vue({
-                el: '#app', //dom,
-                data: {
-                    msg: 'myvue',
-                    msgH: "<h1>my</h1>",
-                    obj: {
-                        name: '黄天赐大傻子'
-                    }
-                },
-                methods: {
-                    fn() {
-                        console.log(this.$data.msg)
-                        console.log(12)
-                    }
-                },
-            })
-            // console.log(vm)
+            el: '#app', //dom,
+            data: {
+                msg: 'myvue',
+                msgH: "<h1>my</h1>",
+                obj: {
+                    name: '我大傻子'
+                }
+            },
+            methods: {
+                fn() {
+                    console.log(this)
+                    console.log(this.msg)
+                }
+            },
+        })
+
+        // console.log(vm)
     </script>
 </body>
 

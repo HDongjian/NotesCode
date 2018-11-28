@@ -80,6 +80,18 @@ class Compile {
                     new Watcher(this.$vm, expr, (newAalue, oldValue) => {
                         node.value = newAalue;
                     })
+                    let self = this;
+                    node.addEventListener('input', function() {
+                        var data = vm.$data;
+                        expr.split('.').forEach((k, i) => {
+                            if (expr.split('.').length - 1 == i) {
+                                data[k] = this.value;
+                            } else {
+                                data = data[k];
+                            }
+                            console.log(data)
+                        })
+                    })
                 }
                 // console.log(type)
                 if (type.startsWith('on:')) {
@@ -87,7 +99,7 @@ class Compile {
                     const events = type.split(':')[1]
                         // console.log(this.$methods[expr])
                     if (events) {
-                        node.addEventListener(events, this.$methods[expr].bind(this))
+                        node.addEventListener(events, this.$methods[expr].bind(this.$vm))
                     }
                 }
             }

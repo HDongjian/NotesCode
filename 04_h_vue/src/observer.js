@@ -20,7 +20,7 @@ class Observer {
             configurable: true,
             enumerable: true,
             get() {
-                console.log(Dep.target)
+                // console.log(Dep.target)
                 dep.sub(Dep.target)
                 return value;
             },
