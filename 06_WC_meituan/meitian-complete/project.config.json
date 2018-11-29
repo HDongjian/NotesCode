@@ -4,16 +4,16 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.3.1",
-	"appid": "wx2dae2a0d5b21ea67",
-	"projectname": "wx",
+	"libVersion": "2.3.2",
+	"appid": "wx15d07ed6ce318622",
+	"projectname": "meituan",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

@@ -1,0 +1,15 @@
+/* components/MyImages/MyImages.wxss */
+
+image{
+  border-radius: 50%;
+  animation: ani_circle 10s infinite linear;
+}
+
+@keyframes ani_circle{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

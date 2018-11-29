@@ -1,0 +1,5 @@
+{
+  "usingComponents":{
+    "my-images":"/components/MyImages/MyImages"
+  }
+}

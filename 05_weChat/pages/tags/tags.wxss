@@ -1,0 +1,11 @@
+/* pages/tags/tags.wxss */
+.cor-red{
+  color: red;
+}
+image{
+  border: 1px solid red;
+}
+
+swiper-item{
+  background-color: indianred;
+}

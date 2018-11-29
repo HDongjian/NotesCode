@@ -1,0 +1,44 @@
+<view>tags页面</view>
+<!-- view 相等于以前的div标签  -->
+<view hover-class="cor-red">点击改变字体颜色</view>
+
+<view>
+  text
+  <view>
+    <text selectable="{{true}}">文本</text>
+    <text decode="{{true}}"> 普&nbsp;通 &lt; </text>
+  </view>
+</view>
+
+<view>
+<!-- <image mode="scaleToFill" src="/images/lbxx1.png"></image>
+<image mode="aspectFit" src="/images/lbxx1.png"></image>
+<image mode="aspectFill" src="/images/lbxx1.png"></image>
+<image mode="widthFix" src="/images/lbxx1.png"></image>
+
+<image mode="bottom" src="/images/lbxx1.png"></image> -->
+</view>
+
+<view>
+轮播图
+<swiper autoplay="{{true}}" indicator-dots="{{true}}" indicator-color="#fff" indicator-active-color="blue">
+<swiper-item>1</swiper-item>
+<swiper-item>2</swiper-item>
+<swiper-item>3</swiper-item>
+<swiper-item>4</swiper-item>
+</swiper>
+</view>
+
+
+<view>
+<navigator target="self" url="../index/index" open-type="reLaunch"  >index</navigator> 
+</view>
+
+
+<view bindtap='changeData' >
+{{myData}}
+</view>
+
+ <my-images bindtap="changeSrc" mysrc="{{pSrc}}" >
+ 这个是组件外部的文字
+ </my-images>

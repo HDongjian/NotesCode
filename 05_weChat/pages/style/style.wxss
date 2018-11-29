@@ -1,0 +1,29 @@
+/* 
+rpx 响应式的单位 规定了所有的屏幕的宽度都是 750rpx
+1 屏幕宽度 750px 
+  750 px = 750 rpx  1px =1rpx
+
+2 屏幕的宽度 375px
+  375 px = 750 rpx 1px = 2rpx
+
+3 假设 宽度 = 750 px 里面 view 宽度 100px 高度 100px
+  750 px = 750 rpx    1px =1rpx
+    view{
+        width:100rpx;
+        height:100rpx;}
+  当屏幕的宽度 750 px =》375px
+    375 px = 750 rpx  1px = 2rpx
+      view{
+        width:100rpx; = 50px
+        height:100rpx;} =50px
+
+
+ */
+ /* 开始引入第三方的样式文件 相对路径 */
+ @import "../../styles/base.wxss";
+
+ view{
+   width:100rpx;
+   height:100rpx;
+   background-color: aqua;
+ }

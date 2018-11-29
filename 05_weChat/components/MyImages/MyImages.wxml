@@ -1,0 +1,5 @@
+<view>
+<image src="{{mysrc}}"></image>
+<!-- 插槽 slot   -->
+<slot></slot>
+</view>

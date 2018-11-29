@@ -1,13 +1,43 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view>首页</view>
+<view>
+{{name}}
 </view>
+<view>
+{{num}}- {{isBoy}}-{{person.name}}-{{person.height}}
+</view>
+
+<view data-id="{{myId}}">123456</view>
+<view>
+<!-- 在标签中想要体现 bool类型 必须要加上大括号 -->
+<checkbox checked='{{false}}'></checkbox>
+</view>
+
+<view hidden="{{isHidden?true:false}}">三元</view>
+<view>
+{{num1+num2}}
+</view>
+<view wx:if="{{1 > 5}}"> wx:if</view>
+<view>
+{{'hello'+ mina}} 
+</view>
+<view wx:if="{{false}} "> wx:if</view>
+<!-- 花括号和引号之间如果有空格，将最终被解析成为字符串 -->
+<view wx:if="false "> wx:if</view>
+
+<view wx:for="{{arr}}" wx:key="{{index}}" >
+<view>
+{{index}}-{{item}}
+</view>
+</view>
+
+<view wx:for="{{obj}}">
+<view>
+<!-- 如果循环的是一个数组 index=索引  对象 index=key属性名  -->
+{{index}}-{{item}}
+</view>
+</view>
+
+<block wx:for="{{arr}}">
+
+{{item}}
+</block>
