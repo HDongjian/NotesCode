@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+</head>
+
+<body>
+
+
+
+</body>
+
+
+<script>
+    // console.log(/^(\d{1,5})$/.test('112'))
+    // console.log(RegExp.$1)
+
+    // console.log(/(\{\W+\})(\d)/.test('12'))
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 第一位是1的11位数字 -->
+
+
+
+
+
+<script>
+    // 1.简单测试
+    // console.log(/./.test('除了换行以外的任意字符')) //true
+    // console.log(/.*/.test('')) //true
+    // console.log(/.+/.test('')) //false
+    // console.log(/b|(ara)/.test('abra')) //true
+    // console.log(/^b|(ara)$/.test('abra')) //false
+    // console.log(/[a-z]{2}/.test('abc')) //true
+    // console.log(/\w{2}/.test('$!abc23')) //false
+
+    // 2.手写正则
+    // 手机号
+    // console.log(/^1{1}\d{10}/.test(18210817529))
+
+    // 固话
+    // 010-1251212
+    // console.log(/^\d{3,4}-\d{6,8}$/.test('0101-12512121'))
+
+    // 邮箱
+    // 字母或者数字@字母或者数字.com
+    // console.log(/^\w{1,}@\w{1,}(.com|.cn)$/.test('12121adsdf@qq.cn'))
+
+    // 身份证号
+    // console.log(/^(\d{14})|(\d{17})(x|X|\d)$/.test('13018419980202112x'))
+
+    // 包含6-18位必须有数字和字母的密码
+
+    // console.log(/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$/.test('asdfsdf'))
+
+    // console.log(/a/g.toString())
+</script>
+
+
+<script>
+    // console.log(/\d/.exec('adf12'))
+
+    // // var patt = new RegExp("RUNOOB", "g");
+    // var res = /\d/.toString();
+    // console.log(res)
+
+    // var str = "Mr Blue has a blue house and a blue car";
+    // console.log(str.replace(/blue/, "red"))
+    // console.log(str.replace(/blue/g, "red"))
+
+    // console.log('1212adfvafed'.replace(/\d/g, 'a'));
+    // console.log('1212adfvafed'.search(/\d/g));
+    // console.log('1212adfvafed'.search(/\d/g));
+
+
+    var str = "The rain in SPAIN stays mainly in the plain";
+    var n = str.split(/AIN/gi);
+    console.log(n)
+
+    // console.log(str.split(/ain/i))
+</script>
+
+</html>

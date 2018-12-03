@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式-进阶</title>
+</head>
+
+<body>
+
+    <script>
+        // 校验数字和字母同时存在6-12位
+        // 零宽度断言
+        /^\d/
+        // var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,12}$/;
+
+        // 分组
+        // 捕获性分组
+
+        // console.log(/(\d)(\w)/.test('1d'))
+        // console.dir('1d'.match(/(\d)(\w)/g))
+
+
+        // var reg = /test(\d+)/g;
+        // // var reg = /test(\d+)/g;
+        // var str = 'new test001 test002';
+        // console.log(str.match(reg)); //["test001", "001", index: 4, input: "new test001 test002"]
+        // console.dir(RegExp)
+
+
+
+        // 非捕获性分组
+        // ?:
+        // console.log(/(\d)(?:-)/.test('1-')) //true
+        // console.log(RegExp.$1) //1
+        // console.log(RegExp.$2) //-
+
+
+        // 断言
+        // var str = "<<diva>ntzone";
+        // var reg = /^(?=<+)<[^>]+>\w+/;
+        // console.log(str.match(reg));
+        // var str = "abZW863ab88";
+        // var reg = /ab(?![A-Z])/;
+        // console.log(str.match(reg));
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,12}$/;
+        // var reg = /^(?![0-9]+$)/;
+        // var str = '1212abcd'
+        // var str2 = 'abcd12312'
+        // var str3 = '12121212'
+        // var str4 = 'abakksdf';
+        // console.log(reg.test(str))
+        // console.log(reg.test(str2))
+        // console.log(reg.test(str3))
+        // console.log(reg.test(str4))
+
+        // var str = "abZW863";
+        // var reg = /ab(?=[A-Z]+)[A-Z]+/;
+        // console.log(str.match(reg));
+
+        // var str = "abZW863ab88";
+        // var reg = /ab(?![A-Z])/;
+        // console.log('abZW863ab88'.match(/ab(?![A-Z])(\d+)/));
+        // console.log('abZW863'.match(/ab(?![A-Z])/));
+        // console.log(RegExp.$1)
+
+
+
+        // var str = "a<div>antzone";
+        // var reg = /^(?!<$)(?!a$)\w+/;
+        // // console.log(str.match(reg));
+        // console.log(/^(?=<)<[^>]+>\w+/.test("<div>antzone"))
+
+        // // console.log(/^bc(?=v$)/.test('bcv'));
+        // console.log(/(?<=name:)name:/.test('name:'))
+        // console.log('1234567890'.match(/((?<=\d)\d{3})*\b/))
+
+        // var reg = /test(\d+)/;
+        // var str = 'new test001 test002';
+        // console.log(str.match(reg)); //["test001", "001", index: 4, input: "new test001 test002"]
+        // console.dir(RegExp)
+
+        // console.log(/(\d)(?:-)/.test('1-'))
+        // console.log(RegExp.$1)
+        // console.log(RegExp.$2)
+        // console.log('1-'.match(/(\d)(-)/))
+
+
+        // console.log('abcadc'.match(/a.+?c/g))
+
+        // abd1232
+        // var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,12}$/;
+
+        console.log('abcadc'.match(/a.+c/g)) //["abcadc"]
+        console.log('abcadc'.match(/a.+?c/g)) // ["abc", "adc"]
+    </script>
+</body>
+
+</html>
