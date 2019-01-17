@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于mock</title>
+</head>
+
+<body>
+    <script src="../mock/mock-min.js"></script>
+    <script>
+        var data = Mock.mock('http://test/one', {
+            'data': [{
+                'id|+1': 1
+            }, {
+                'id|+1': 1,
+                name: 12
+            }],
+            status: 200,
+        })
+    </script>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'http://test/one', true);
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                var result = xhr.responseText;
+                result = JSON.parse(result)
+                console.log(result)
+            }
+        };
+    </script>
+</body>
+
+</html>
