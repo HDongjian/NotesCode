@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-life</title>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script src="vue.min.js"></script>
+<script>
+    const el = new Vue({
+        el: "#app",
+        data() {
+            return {
+                msg: "122"
+            }
+        },
+        methods: {
+            get() {
+                console.log('get')
+            }
+        },
+        beforeCreate() {
+            console.log('beforeCreate-data:' + this.msg)
+            console.log('beforeCreate-methods:' + this.get)
+            console.log('beforeCreate-dom:' + this.$el)
+        },
+        created() {
+            console.log("=======================================")
+            console.log('created-data:' + this.msg)
+            console.log('created-methods:' + this.get)
+            console.log('created-dom:' + this.$el)
+        },
+        beforeMount() {
+            console.log("=======================================")
+            console.log('beforeMount-data:' + this.msg)
+            console.log('beforeMount-methods:' + this.get)
+            console.log('beforeMount-dom:' + this.$el)
+        },
+        mounted() {
+            console.log("=======================================")
+            console.log('mounted-data:' + this.msg)
+            console.log('mounted-methods:' + this.get)
+            console.log('mounted-dom:' + this.$el)
+        },
+    })
+</script>
+
+</html>

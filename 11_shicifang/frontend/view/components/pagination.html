@@ -1,0 +1,30 @@
+{% 
+  macro pagination(
+    _total,
+    _page,
+    _limit,
+    hideNavigator=false,
+    hidePageNumbers=false
+  )
+%}
+<div class="sui-pagination pagination-large">
+  <ul>
+    {% if not hideNavigator %}
+    <li class="prev {{ 'disabled' if (_page <= 1) else '' }}">
+      <a href="{{ '#' if (_page <= 1) else '?_page=' + (_page - 1) }}">上一页</a>
+    </li>
+    {% endif %}
+    {% if not hidePageNumbers %}
+    {% for item in paginationRange(_total, _page)  %}
+    <li class="{{ 'active' if _page === item else '' }}"><a href="?_page={{ item }}">{{ item }}</a></li>
+    {% endfor %}
+    <!-- <li class="dotted"><span>...</span></li> -->
+    {% endif %}
+    {% if not hideNavigator %}
+    <li class="next {{ 'disabled' if (_page >= _total) else '' }}">
+      <a href="{{ '#' if (_page >= _total) else ('?_page=' + (_page + 1)) }}">下一页</a>
+    </li>
+    {% endif %}
+  </ul>
+</div>
+{% endmacro %}

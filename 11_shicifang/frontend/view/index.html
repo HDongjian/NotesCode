@@ -1,0 +1,157 @@
+{% extends "./layout/layout.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/public/css/page-sj-qa-login.css" />
+<link rel="stylesheet" type="text/css" href="/public/css/page-sj-qa-logined.css" />
+<style>
+  .sui-pagination .disabled a {
+    background-color: #fafafa !important;
+    color: #999999 !important;
+  }
+</style>
+{% endblock %}
+
+{% block main %}
+{% include "./layout/navbar.html" %}
+<div class="wrapper  qa-content">
+  <div class="fl  left-list">
+    <div class="tab-content">
+      <div id="index" class="tab-pane active">
+        <div class="tab-bottom-line">
+          <ul class="sui-nav nav-tabs">
+            <li class="active"><a href="#new" data-toggle="tab">最新</a></li>
+            <li><a href="#hot" data-toggle="tab">热门</a></li>
+            <li><a href="#wait" data-toggle="tab">等待回复</a></li>
+          </ul>
+          <div class="qa-list">
+            <div class="tab-content">
+              <div id="new" class="tab-pane active">
+                <ul class="detail-list">
+                  {% for item in questions %}
+                  <li class="qa-item">
+                    <div class="fl record">
+                      <div class="number">
+                        <div class="border useful">
+                          <p class="usenum">{{ item.voteCount }}</p>
+                          <p>有用</p>
+                        </div>
+                        <div class="border answer">
+                          <p class="ansnum">{{ item.commentCount }}</p>
+                          <p>回答</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fl info">
+                      <div class="question">
+                        <p class="title"><a href="/questions/{{ item._id }}">{{ item.title }}</a></p>
+                      </div>
+                      <div class="other">
+                        <ul class="fl sui-tag">
+                          {% for tag in item.tags %}
+                          <li>{{ tag }}</li>
+                          {% endfor %}
+                        </ul>
+                        <div class="fr brower">
+                          <p>{{ item.createdAt | relativeTime }} 来自 <a href="#">{{ item.user.nickname }} </a></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </li>
+                  {% endfor %}
+                </ul>
+                <div class="sui-pagination">
+                  <ul>
+                    <li class="prev disabled"><a href="#">上一页</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li class="dotted"><span>...</span></li>
+                    <li class="next"><a href="#">下一页</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div id="hot" class="tab-pane">
+                <p>热门回答</p>
+              </div>
+              <div id="wait" class="tab-pane">
+                <p>等待回答</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="php" class="tab-pane">
+        php
+      </div>
+      <div id="js" class="tab-pane">
+        Javascript
+      </div>
+      <div id="python" class="tab-pane">
+        python
+      </div>
+      <div id="java" class="tab-pane">
+        java
+      </div>
+    </div>
+  </div>
+  <!-- 登录前 -->
+  <!-- <div class="fl right-tag">
+    <div class="qa-login">
+      <p>猿圈儿问答社区 帮助他人手留余香</p>
+      <form action="" class="sui-form">
+        <div class="control-group">
+          <label for="inputaccount" class="control-label">用户名</label>
+          <div class="controls">
+            <input type="text" id="inputaccount" placeholder="" />
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="inputaccount" class="control-label"> <span class="fl">密码</span> <span class="fr">忘记密码</span> </label>
+          <div class="controls">
+            <input type="password" id="inputaccount" placeholder="" />
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="" class="fl radio-circle checked">
+            <input type="radio" name="radio1" /><span>记住登录状态</span> </label>
+          <div class="fr controls">
+            <a class="sui-btn btn-login" href="./signin.html">登录</a>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </form>
+      <p>还没账号？立即<a href="./signin.html" target="_blank">注册</a></p>
+    </div>
+  </div> -->
+  <!-- 登录后 -->
+  <div class="fl right-tag">
+    <div class="block-btn">
+      <a class="sui-btn btn-block btn-share" href="/questions/new">发布话题</a>
+    </div>
+    <div class="hot-tags">
+      <div class="head">
+        <h3 class="title">热门话题</h3>
+      </div>
+      <div class="tags">
+        <ul class="sui-tag">
+          <li>Php</li>
+          <li>Javascript</li>
+          <li>Gif</li>
+          <li>Java</li>
+          <li>C#</li>
+          <li>iOS</li>
+          <li>C++</li>
+        </ul>
+        <a class="sui-btn btn-block btn-share" href="./tags-index.html">更多</a>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
